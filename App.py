@@ -52,7 +52,7 @@ f.close()
 
 a = np.hstack((maleX, maleY))
 plt.hist(a, bins=100)  # arguments are passed to np.histogram
-plt.title("Histogram with 'auto' bins")
+plt.title("Histogram")
 plt.xlabel('Weight')
 plt.ylabel('Height')
 plt.show()
