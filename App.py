@@ -56,3 +56,11 @@ plt.title("Histogram")
 plt.xlabel('Weight')
 plt.ylabel('Height')
 plt.show()
+
+# plt.plot(maleX, maleY, 'x')
+# plt.axis('equal')
+# plt.title("Histogram")
+# plt.xlabel('Weight (lb)')
+# plt.ylabel('Height (cm)')
+# plt.show()
+
