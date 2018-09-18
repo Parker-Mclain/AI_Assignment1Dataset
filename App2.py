@@ -73,28 +73,28 @@ for i in range(len(femaleData[0])):
 # Histogram Plot Datasets for part A (Only height)
 # *** UNCOMMENT THIS SECTION AND COMMENT OUT THE "LINE PLOT" TO VIEW ***
 # *******************
-plt.subplot(212)
-maleData = np.random.normal(maleMean[1], maleSTD[1], 2000)
-femaleData = np.random.normal(femaleMean[1], femaleSTD[1], 2000)
-plt.hist(maleHeightData, bins=np.arange(maleHeightData.min(), maleHeightData.max()+1), label='Male')
-plt.hist(femaleHeightData, bins=np.arange(femaleHeightData.min(), femaleHeightData.max()+1), label='Female')
-plt.legend(loc='upper left')
-plt.xlabel('Height (cm)')
-plt.ylabel('Frequency')
-plt.show()
+# plt.subplot(212)
+# maleData = np.random.normal(maleMean[1], maleSTD[1], 2000)
+# femaleData = np.random.normal(femaleMean[1], femaleSTD[1], 2000)
+# plt.hist(maleHeightData, bins=np.arange(maleHeightData.min(), maleHeightData.max()+1), label='Male')
+# plt.hist(femaleHeightData, bins=np.arange(femaleHeightData.min(), femaleHeightData.max()+1), label='Female')
+# plt.legend(loc='upper left')
+# plt.xlabel('Height (cm)')
+# plt.ylabel('Frequency')
+# plt.show()
 
 # *******************
 # Line Plot Datasets for part A (Only height)
 # *** COMMENT OUT THIS SECTION AND UNCOMMENT THE "Histogram PLOT" TO VIEW ***
 # *******************
-# plt.subplot(212)
-# temp = np.zeros((2000,), dtype=int)
-# plt.plot(maleHeightData, temp, marker='o', markersize=2, label='Male', color='blue')
-# plt.plot(femaleHeightData, temp, marker='o', markersize=1, label='Female', color='green')
-# plt.axis([125, 215, -.5, .5])
-# plt.legend(loc='upper left')
-# plt.xlabel('Height (cm)')
-# plt.show()
+plt.subplot(212)
+temp = np.zeros((2000,), dtype=int)
+plt.plot(maleHeightData, temp, marker='o', markersize=2, label='Male', color='blue')
+plt.plot(femaleHeightData, temp, marker='o', markersize=1, label='Female', color='green')
+plt.axis([125, 215, -.5, .5])
+plt.legend(loc='upper left')
+plt.xlabel('Height (cm)')
+plt.show()
 
 print("Completed at:", datetime.datetime.now().time())
 
