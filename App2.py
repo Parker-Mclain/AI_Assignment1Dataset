@@ -51,12 +51,46 @@ for i in range(len(femaleData[0])):
 f.close()
 
 # *******************
-# Plot Datasets
+# Plot Datasets for part B (Both height and weight)
 # *******************
+plt.figure(1)
+plt.subplot(211)
 plt.scatter(maleData[0], maleData[1], label='Male')
 plt.scatter(femaleData[0], femaleData[1], label='Female')
 plt.legend(loc='upper left')
 plt.xlabel('Weight (lb)')
 plt.ylabel('Height (cm)')
+
+# *******************
+# Histogram Plot Datasets for part A (Only height)
+# *** UNCOMMENT THIS SECTION AND COMMENT OUT THE "LINE PLOT" TO VIEW ***
+# *******************
+# plt.subplot(212)
+# maleData = np.random.normal(maleMean[1], maleSTD[1], 2000)
+# femaleData = np.random.normal(femaleMean[1], femaleSTD[1], 2000)
+# plt.hist(maleData, bins=np.arange(maleData.min(), maleData.max()+1), label='Male')
+# plt.hist(femaleData, bins=np.arange(femaleData.min(), femaleData.max()+1), label='Female')
+# plt.legend(loc='upper left')
+# plt.xlabel('Height (cm)')
+# plt.ylabel('Frequency')
+# plt.show()
+
+# *******************
+# Line Plot Datasets for part A (Only height)
+# *** COMMENT OUT THIS SECTION AND UNCOMMENT THE "Histogram PLOT" TO VIEW ***
+# *******************
+plt.subplot(212)
+temp = np.zeros((2000,), dtype=int)
+maleData = np.random.normal(maleMean[1], maleSTD[1], 2000)
+femaleData = np.random.normal(femaleMean[1], femaleSTD[1], 2000)
+plt.plot(maleData, temp, marker='o', markersize=2, label='Male', color='blue')
+plt.plot(femaleData, temp, marker='o', markersize=1, label='Female', color='green')
+plt.axis([125, 215, -.5, .5])
+plt.legend(loc='upper left')
+plt.xlabel('Height (cm)')
 plt.show()
+
+
+
+
 
