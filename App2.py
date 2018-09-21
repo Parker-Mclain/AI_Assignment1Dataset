@@ -22,7 +22,7 @@ maleCorr = 0.8         # correlation
 maleCovs = [[maleSTD[0]**2, maleSTD[0]*maleSTD[1]*maleCorr], [maleSTD[0]*maleSTD[1]*maleCorr, maleSTD[1]**2]]
 maleData = np.random.multivariate_normal(maleMean, maleCovs, 2000).T
 # Convert to 2 decimal places
-np.around(maleData, 2, out=maleData) 
+np.around(maleData, 2, out=maleData)
 
 # *******************
 # Female Dataset
