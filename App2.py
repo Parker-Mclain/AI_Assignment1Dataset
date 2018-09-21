@@ -58,6 +58,7 @@ plt.figure(1)
 plt.subplot(211)
 plt.scatter(maleData[0], maleData[1], label='Male')
 plt.scatter(femaleData[0], femaleData[1], label='Female')
+plt.plot((0, 400), (112.89, 226.29), 'r-')  # sep_line_a
 plt.legend(loc='upper left')
 plt.xlabel('Weight (lb)')
 plt.ylabel('Height (cm)')
@@ -89,6 +90,7 @@ for i in range(len(femaleData[0])):
 # *******************
 plt.subplot(212)
 temp = np.zeros((2000,), dtype=int)
+plt.plot((169.65, 169.65), (-.2, .2), 'r-')  # sep_line_a
 plt.plot(maleHeightData, temp, marker='o', markersize=2, label='Male', color='blue')
 plt.plot(femaleHeightData, temp, marker='o', markersize=1, label='Female', color='green')
 plt.axis([125, 215, -.5, .5])
