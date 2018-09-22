@@ -38,7 +38,6 @@ for x in range(0, 2):
         else:
             height = np.random.normal(femaleAverageHeight, 0.3)
             weight = np.random.normal(femaleAverageWeight, 20)
-            gender = 0
             femaleHeight.append(height)
             femaleWeight.append(weight)
             file.write(str(femaleHeight[y]) + "," + str(femaleWeight[y]) + "," + str(x) + "\n")
@@ -53,7 +52,6 @@ convertedMaleHeight = np.array(maleHeight)
 convertedFemaleHeight = np.array(maleHeight)
 maleGraphA = plt.scatter(maleHeight, np.full(convertedMaleHeight.shape, -0.001), alpha=.25, s=35, label='Male')
 femaleGraphA = plt.scatter(femaleHeight, np.full(convertedFemaleHeight.shape, -0.001), alpha=.25, s=35, label='Female')
-separationLine = pd.read_csv("sep_line_a.txt", header=None)
 plt.legend(loc='upper right')
 plt.xlabel("Height(ft)")
 xLine = separationLineA[0][1] / separationLineA[0][0]
@@ -69,12 +67,11 @@ femaleGraphB = plt.scatter(femaleHeight, femaleWeight, alpha=.25, s=35, label='F
 plt.legend(loc='upper right')
 plt.xlabel("Height(ft)")
 plt.ylabel("Weight(lbs)")
-
-bias = separationLineB[0][2]
+b = separationLineB[0][2]
 heightWeight = separationLineB[0][0]
 weightWeight = separationLineB[0][1]
-plt.plot([4.5, 7], [(bias / weightWeight) + ((heightWeight * 4.5) / weightWeight),
-                    (bias / weightWeight) + ((heightWeight * 7) / weightWeight)])
+plt.plot([4.5, 7], [(b / weightWeight) + ((heightWeight * 4.5) / weightWeight),
+                    (b / weightWeight) + ((heightWeight * 7) / weightWeight)])
 plt.show()
 
 allHeight = np.concatenate((maleHeight, femaleHeight), axis=0)
